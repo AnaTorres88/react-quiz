@@ -1,0 +1,15 @@
+.pagination {
+    display: inline-block;
+    align-items: center;
+    font-style: normal;
+    font-weight: 600;
+    color: gray;
+}
+
+.pagination span {
+    margin: 0 3px;
+}
+
+.pagination .current {
+    color: blue;
+}

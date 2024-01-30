@@ -1,0 +1,11 @@
+
+.question-container {
+    width: 100%;
+}
+.question-container footer {
+    display: flex;
+    align-items: center;
+}
+.question-container .footer button {
+    margin: 0 auto;
+}
