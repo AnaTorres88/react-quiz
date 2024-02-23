@@ -1,11 +1,14 @@
 
 .question-container {
     width: 100%;
+    min-height:315px;
+    background:#fff;
+    width: 100%;
+    overflow: hidden;
+    background:#fff;
 }
-.question-container footer {
-    display: flex;
-    align-items: center;
-}
-.question-container .footer button {
-    margin: 0 auto;
+
+.question-container .title p {
+    padding: 0;
+    margin: 0;
 }

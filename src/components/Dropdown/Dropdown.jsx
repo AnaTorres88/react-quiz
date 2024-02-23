@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-export default function Dropdown({title, options, ariaLabel,...props}){
+export default function Dropdown({title, options,...props}){
   const [isSelected, setSelected] = useState('');
     return (
       <div className="dropdown">

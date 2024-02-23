@@ -1,0 +1,32 @@
+{
+
+    "quizName": "Cultura General",
+    "intro": "Esta es tu oportunidad de presumir tus amplios conocimientos",
+    "quizImage":"",
+    "quizInstructions":"Responde correctamente las preguntas de cultura general que se te presentan a continuación",
+    "questionList": [
+        {
+            "text": "¿Cuál es el dinosaurio cuyo nombre es Rey lagarto tirano?",
+            "instructions": "elige la respuesta correcta",
+            "type": "radio",
+            "options": ["Parasaurolophus", "Velocirraptor", "Tiranosaurio"],
+            "name": "dino",
+            "answer": null
+        },
+        {
+            "text": "¿Quiénes fundaron Roma?",
+            "type": "dropdown",
+            "name": "rome",
+            "options": ["Julio Cesar y Alejandro Magno", "Los Medici", "Rómulo y Remo"],
+            "answer": null
+        },
+        {   
+            "text": "¿Cuáles son poliedros?",
+            "instructions": "Puede haber más de una respuesta correcta",
+            "type": "checkbox",
+            "name": "geometric",
+            "options": ["triángulo", "dodecaedro", "círculo", "esfera"],
+            "answer": null
+        }
+    ]
+}

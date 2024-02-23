@@ -1,14 +1,14 @@
 import {useState} from 'react';
 
-export default function Checkbox({label, checked, ariaLabel, ...props}){
+export default function Checkbox({label, checked, name, ...props}){
   const defaultChecked = checked ? checked : false;
   const [isChecked, setIsChecked] = useState(defaultChecked);
     return (
           <div className="checkboxContainer">
             <label>
                 <input type="checkbox" 
-                aria-label={ariaLabel}
                 checked={isChecked}
+                name={name}
                 onChange={() => setIsChecked((prev) => !prev)}
                 {...props}
                 >
