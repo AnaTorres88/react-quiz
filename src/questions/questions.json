@@ -11,14 +11,16 @@
             "type": "radio",
             "options": ["Parasaurolophus", "Velocirraptor", "Tiranosaurio"],
             "name": "dino",
-            "answer": null
+            "answer": null,
+            "required": true
         },
         {
             "text": "¿Quiénes fundaron Roma?",
             "type": "dropdown",
             "name": "rome",
             "options": ["Julio Cesar y Alejandro Magno", "Los Medici", "Rómulo y Remo"],
-            "answer": null
+            "answer": null,
+            "required": true
         },
         {   
             "text": "¿Cuáles son poliedros?",
@@ -26,7 +28,9 @@
             "type": "checkbox",
             "name": "geometric",
             "options": ["triángulo", "dodecaedro", "círculo", "esfera"],
-            "answer": null
+            "answer": [],
+            "required": true
+
         }
     ]
 }

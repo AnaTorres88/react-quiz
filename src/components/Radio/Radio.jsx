@@ -1,13 +1,15 @@
-import {useState} from 'react';
-
+import {useContext, useState} from 'react';
+import { QuizContext } from '../../App';
+import { updateAnswers}  from '../../helpers/updateAnswers';
 export default function Radio({label, checked, name, id, updateAnswer, index, ...props}) {
-      const defaultChecked = checked ? checked : false;
       const [answer, setAnswer] = useState(null);
+      const [questions, setQuestions] = useContext(QuizContext);
       const idLower = id.toLowerCase();
+
       const onChangeRadio = (e) => {
             const answerLower = e.target.value.toLowerCase();
             setAnswer(() => answerLower);
-            updateAnswer(index,e .target.value);
+            updateAnswers(e .target.value, index, questions, setQuestions);
       }
     return (
           <div className="radioContainer">

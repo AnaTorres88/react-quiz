@@ -3,8 +3,10 @@ import "./Quiz.css";
 import Text from "./Text/Text";
 import Pagination from "./Pagination/Pagination";
 import Button from "./Button/Button";
-import { useState } from "react";
-export default function Quiz({title, questions, updateAnswer}) {
+import {useContext, useState} from 'react';
+import { QuizContext } from '../App';
+export default function Quiz({title, updateAnswer}) {
+    const [questions] = useContext(QuizContext);
     const [pageCount, setPageCount] = useState(1);
     const next = () => {
         if(pageCount<questions.length) {

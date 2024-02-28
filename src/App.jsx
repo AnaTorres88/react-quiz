@@ -1,15 +1,13 @@
-import { useState } from 'react'
-import Checkbox from './components/Checkbox/Checkbox';
-import Radio from './components/Radio/Radio';
-import Dropdown from './components/Dropdown/Dropdown';
-import Question from './components/Question';
+import { useState, useContext, createContext } from 'react'
 import Quiz from './components/Quiz';
 import Start from './components/Start';
 import './App.css'
 import quizData from './questions/questions.json';
+const {title, intro, quizImage, quizInstructions, questionList } = quizData;
+export const QuizContext = createContext(questionList);
 
 function App() {
-  const {title, intro, quizImage, quizInstructions, questionList } = quizData;
+  
   const [ questions, setQuestions ] = useState(questionList);
   const [start, setStart ] = useState(false);
 
@@ -29,12 +27,15 @@ function App() {
   }
 
   return (
-    <>
-      {
-        start ? <Quiz title = {title} questions={questions} updateAnswer={updateAnswer}/> : 
-        <Start title={title} instructions = {quizInstructions} intro= {intro} onStart = {startQuiz}/>
-      }
-    </>
+    <QuizContext.Provider value={[questions, setQuestions]}>
+      <>
+        {
+          start ? <Quiz title = {title} questions={questions} updateAnswer={updateAnswer}/> : 
+          <Start title={title} instructions = {quizInstructions} intro= {intro} onStart = {startQuiz}/>
+        }
+        {JSON.stringify(questions)}
+      </>
+    </QuizContext.Provider>
   )
 }
 
