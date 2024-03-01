@@ -33,7 +33,6 @@ function App() {
           start ? <Quiz title = {title} questions={questions} updateAnswer={updateAnswer}/> : 
           <Start title={title} instructions = {quizInstructions} intro= {intro} onStart = {startQuiz}/>
         }
-        {JSON.stringify(questions)}
       </>
     </QuizContext.Provider>
   )

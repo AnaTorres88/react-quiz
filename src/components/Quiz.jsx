@@ -24,7 +24,7 @@ export default function Quiz({title, updateAnswer}) {
         <header className="title">
             <Text type="title-small" text={title}/>
         </header>
-        {//TODO: create quiz array set controls
+        {
             questions.map((question, i) => 
                 i==pageCount-1 &&
                 <Question key={'question-'+i} index = {i} updateAnswer = {updateAnswer} name={question.name} options = {question.options} type = {question.type} instructions= {question.instructions} questionTitle={question.text}/>
@@ -32,10 +32,11 @@ export default function Quiz({title, updateAnswer}) {
         }
         <span className="mark"></span>
         <footer className="footer">
-                { /*Here goes the pagination and controls. We must know the total number of questions and set a counter*/ }
             <Button type= "icon" icon="bi-chevron-compact-left" onClick={prev}/>
             <Pagination item={pageCount} totalItems={questions.length} type="word"/>
             <Button type= "icon" icon="bi-chevron-compact-right" onClick={next}/>
+            { /*Show a button once we reach the end to go to results*/ }
+
         </footer>
     </section>);
 }

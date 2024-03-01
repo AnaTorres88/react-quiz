@@ -1,6 +1,7 @@
 import Button from "./Button/Button";
 import Text from "./Text/Text";
 import "./Start.css";
+
 export default function Start({title, intro="", instructions="", buttonText="Start Quiz", imgUrl="https://placehold.co/600x400",  onStart}) {
     return( <section id="quiz-start">
         <div className="title">

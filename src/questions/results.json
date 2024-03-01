@@ -1,0 +1,18 @@
+{
+
+    "title": "Resultados",
+    "intro": "¡Feliciadades! haz completado el desafío. Espero haya sido satisfactorio para tí",
+    "resultsImage":"",
+    "answersList": [
+        {
+            "id": 1,
+            "answer": ["Tiranosaurio"]
+        },
+        {   "id": 2,
+            "answer": ["Rómulo y Remo"]
+        },
+        {   "id": 3,
+            "answer": ["triángulo", "dodecaedro"]
+        }
+    ]
+}

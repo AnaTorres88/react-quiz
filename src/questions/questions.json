@@ -30,7 +30,6 @@
             "options": ["triángulo", "dodecaedro", "círculo", "esfera"],
             "answer": [],
             "required": true
-
         }
     ]
 }
