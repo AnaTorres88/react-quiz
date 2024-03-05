@@ -29,3 +29,10 @@
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(79,70,252,1) 100%);
     border: 0;
 }
+#quiz footer .finish-button {
+    font-weight: bold;
+    background: rgb(79,70,252);
+    background: linear-gradient(152deg, rgba(79,70,252,1) 0%, rgba(204,61,25,1) 100%);
+    border: none;
+    border-bottom: 2px solid transparent;
+}

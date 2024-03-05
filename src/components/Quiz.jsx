@@ -5,7 +5,9 @@ import Pagination from "./Pagination/Pagination";
 import Button from "./Button/Button";
 import {useContext, useState} from 'react';
 import { QuizContext } from '../App';
-export default function Quiz({title, updateAnswer}) {
+
+/* Takes care of pagination */
+export default function Quiz({title, updateAnswer, finish}) {
     const [questions] = useContext(QuizContext);
     const [pageCount, setPageCount] = useState(1);
     const next = () => {
@@ -34,9 +36,8 @@ export default function Quiz({title, updateAnswer}) {
         <footer className="footer">
             <Button type= "icon" icon="bi-chevron-compact-left" onClick={prev}/>
             <Pagination item={pageCount} totalItems={questions.length} type="word"/>
-            <Button type= "icon" icon="bi-chevron-compact-right" onClick={next}/>
-            { /*Show a button once we reach the end to go to results*/ }
-
+            {pageCount < questions.length ? <Button type= "icon" icon="bi-chevron-compact-right" onClick={next}/>
+            : <Button text="Finish" style="finish-button" onClick={finish}/>}
         </footer>
     </section>);
 }

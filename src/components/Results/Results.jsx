@@ -1,10 +1,7 @@
-import { useContext} from 'react';
-import { QuizContext } from '../../App';
-import { updateAnswers}  from '../../helpers/updateAnswers';
+
 import Button from "../Button/Button";
 import Text from "../Text/Text";
-export default function Results({title, options,...props}){
-  const [questions, setQuestions] = useContext(QuizContext);
+export default function Results({title="Some title",intro="Lorem ipsum", buttonText = "Restart", instructions="dolor sit amet, consectetur adipiscing elit", imgUrl="", onReset}){
   
     return (
         <section id="quiz-results">
@@ -16,7 +13,7 @@ export default function Results({title, options,...props}){
                 <Text className="paragraph" text={instructions}/>
                 <img className="quiz-image" src={imgUrl}/>
             </div>
-            <Button style = "start-button" text={buttonText} onClick={onStart}/>
+            <Button style = "start-button" text={buttonText} onClick={onReset}/>
         </section>
     );
 }
