@@ -12,6 +12,6 @@ export default function Start({title, intro="", instructions="", buttonText="Sta
             <Text className="paragraph" text={instructions}/>
             <img className="quiz-image" src={imgUrl}/>
         </div>
-        <Button style = "start-button" text={buttonText} onClick={onStart}/>
+        <Button style = "start-button" disabled = {false} text={buttonText} onClick={onStart}/>
     </section>);
 }

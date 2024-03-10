@@ -1,4 +1,5 @@
 
+import "./Results.css";
 import Button from "../Button/Button";
 import Text from "../Text/Text";
 import results  from "../../data/results.json";
@@ -15,7 +16,6 @@ export default function Results({buttonText = "Restart", calcType = "round", app
     let totalPoints = 0;
     let checkboxPoints;
     resultsData.answersList.forEach((item, index )=> {
-        console.log(item.answer, questions[index].answer)
         if (questions[index].type === "checkbox") {
             checkboxPoints = checkCheckboxAnswers(item.answer, questions[index].answer);
         }
@@ -35,7 +35,7 @@ export default function Results({buttonText = "Restart", calcType = "round", app
             return;
         }
         sortedAnswers.forEach((answer, i) => {
-            if(answer.toLowerCase() === sortedUserAnswers[i]) {
+            if(answer!== null && answer.toLowerCase() === sortedUserAnswers[i]) {
                 rightCounter++;
             }
         });

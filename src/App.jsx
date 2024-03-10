@@ -19,7 +19,9 @@ function App() {
   const goToResults = () => {
     setResults(true);
   }
-
+  const goToStart = () => {
+    setStart(false);
+  }
   const restartQuiz =() => {
     setStart(false);
     setResults(false);
@@ -42,7 +44,7 @@ function App() {
     if(start && results) {
       return (<Results onReset = {restartQuiz} calcType ="round" approved={70}/>)
     } else if (start && !results) {
-      return (<Quiz title = {title} questions={questions} updateAnswer={updateAnswer} finish={goToResults}/>);
+      return (<Quiz title = {title} questions={questions} updateAnswer={updateAnswer} start = {goToStart} finish={goToResults}/>);
     } else {
   	  return <Start title={title} instructions = {quizInstructions} intro= {intro} onStart = {startQuiz}/>
     }
@@ -50,12 +52,7 @@ function App() {
   return (
     <QuizContext.Provider value={[questions, setQuestions]}>
       <>
-        {/* {
-          start && !finish ? <Quiz title = {title} questions={questions} updateAnswer={updateAnswer} finish={goToResults}/> : 
-          <Start title={title} instructions = {quizInstructions} intro= {intro} onStart = {startQuiz}/>
-        } */}
         {renderQuiz()}
-        {JSON.stringify(questions)}
       </>
     </QuizContext.Provider>
   )

@@ -6,6 +6,8 @@
     width: 100%;
     overflow: hidden;
     background:#fff;
+    padding: 10px 20px;
+    text-align: left;
 }
 
 .question-container .title p {

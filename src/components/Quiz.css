@@ -3,6 +3,8 @@
     display:block;
     padding: 15px;
 	margin: 0 auto;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(251,250,255,1) 100%);
 	-webkit-box-shadow: 0 20px 60px -23px rgba(0, 0, 0, 0.45);
 	box-shadow: 0 20px 60px -23px rgba(0, 0, 0, 0.45);
     border-radius: 5px 5px 0px 0px;
@@ -12,27 +14,6 @@
 #quiz .title-small { 
     display: flex;
     align-items: flex-start;
-    font-size: 18px;
-    padding-left: 30px;
-    padding-top: 30px;
-}
-#quiz .footer {
-    min-height: 60px;
-    margin: 0 auto;
-    padding-top:15px;
-    display: flex;
-    align-items: center;
-}
-#quiz footer button {
-    margin: 0 auto;
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(79,70,252,1) 100%);
-    border: 0;
-}
-#quiz footer .finish-button {
-    font-weight: bold;
-    background: rgb(79,70,252);
-    background: linear-gradient(152deg, rgba(79,70,252,1) 0%, rgba(204,61,25,1) 100%);
-    border: none;
-    border-bottom: 2px solid transparent;
+    font-size: 16px;
+    padding: 10px, 30px, 20px;
 }

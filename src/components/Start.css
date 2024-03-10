@@ -2,6 +2,8 @@
     display:block;
     padding: 30px;
 	margin: 0 auto;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(251,250,255,1) 100%);
 	-webkit-box-shadow: 0 20px 60px -23px rgba(0, 0, 0, 0.45);
 	box-shadow: 0 20px 60px -23px rgba(0, 0, 0, 0.45);
     border-radius: 5px 5px 0px 0px;

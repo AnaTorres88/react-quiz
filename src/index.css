@@ -16,6 +16,9 @@
 
 body {
   font-size: 16px;
+  height: 100vh;
+  background: rgb(45,41,120);
+  background: linear-gradient(152deg, rgba(45,41,120,1) 0%, rgba(36,209,92,1) 100%);  
 }
 
 .mark {
