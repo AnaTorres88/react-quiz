@@ -3,7 +3,7 @@ import Quiz from './components/Quiz';
 import Start from './components/Start';
 import Results from './components/Results/Results';
 import './App.css'
-import quizData from './questions/questions.json';
+import quizData from './data/questions.json';
 const {title, intro, quizImage, quizInstructions, questionList } = quizData;
 export const QuizContext = createContext(questionList);
 
@@ -23,6 +23,7 @@ function App() {
   const restartQuiz =() => {
     setStart(false);
     setResults(false);
+    setQuestions(questionList);
   }
   
   const updateAnswer = (index, answer) => {
@@ -39,7 +40,7 @@ function App() {
 
   const renderQuiz = () => {
     if(start && results) {
-      return (<Results onReset = {restartQuiz}/>)
+      return (<Results onReset = {restartQuiz} calcType ="round" approved={70}/>)
     } else if (start && !results) {
       return (<Quiz title = {title} questions={questions} updateAnswer={updateAnswer} finish={goToResults}/>);
     } else {
@@ -54,6 +55,7 @@ function App() {
           <Start title={title} instructions = {quizInstructions} intro= {intro} onStart = {startQuiz}/>
         } */}
         {renderQuiz()}
+        {JSON.stringify(questions)}
       </>
     </QuizContext.Provider>
   )

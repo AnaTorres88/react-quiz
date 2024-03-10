@@ -1,7 +1,8 @@
 {
 
     "title": "Resultados",
-    "intro": "¡Feliciadades! haz completado el desafío. Espero haya sido satisfactorio para tí",
+    "intro": "¡Feliciadades! Haz completado el desafío. Espero haya sido satisfactorio para tí",
+    "instructions": "",
     "resultsImage":"",
     "answersList": [
         {

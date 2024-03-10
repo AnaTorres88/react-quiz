@@ -28,7 +28,7 @@ export default function Question({instructions="", index, questionTitle="", type
             <div className="body">
                 <Text type ="question" text = {questionTitle} />
                 {/* pass the options from question */
-                    type === "dropdown" ? <Dropdown title="Menu" options={questions[index].options}/>
+                    type === "dropdown" ? <Dropdown title="Menu" index = {index} options={questions[index].options}/>
                     : questions[index].options.map((option, i)=> renderOptions(option, i))
                 }   
             </div>
