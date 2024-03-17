@@ -12,22 +12,29 @@
 }
 
 #quiz-start .start-button {
+    margin: 0 auto;
+    padding: 0;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(79,70,252,1) 100%);
+    -webkit-box-shadow: 0 22px 11px -21px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 22px 11px -21px rgba(0, 0, 0, 0.6);
     border: none;
     width: 40%;
     height:60px;
     font-size: 30px;
     font-weight: 600;
-    transition:all 0.3s ease-in-out;
+    transition: all 0.2s linear;
+    border-bottom:5px solid #2034a6;
 }
 
 #quiz-start .start-button:hover {
-    -webkit-box-shadow: 0 22px 11px -21px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 22px 11px -21px rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+}
+#quiz-start .start-button:active {
+    border-bottom:2px solid #2034a6;
+    transform: translateY(4px);
 }
 
 #quiz-start h1 {
