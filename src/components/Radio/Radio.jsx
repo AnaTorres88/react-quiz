@@ -14,6 +14,7 @@ export default function Radio({label, checked, name, id, updateAnswer, index, ..
     return (
           <div className="radioContainer">
                 <input type="radio"
+                className="m-1"
                 id={idLower}
                 name = {name}
                 selected={answer === idLower}

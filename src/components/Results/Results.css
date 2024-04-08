@@ -2,4 +2,77 @@
 #quiz-results {
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(251,250,255,1) 100%);
+    padding: 30px;
 }
+#quiz-results .title {
+    max-width: 50%;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 50px;
+    
+}
+#quiz-results .title h3 { 
+    font-size: 1.4rem;
+    max-width: 80%;
+}
+#quiz-results .title h1 {
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+    background: linear-gradient(152deg, rgba(232, 27, 77, 1) 22%, rgba(62, 0, 255, 1) 59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#quiz-results img {
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+    margin: 0 auto 1rem auto;
+    padding: 0.5rem;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+    border: 2px solid #395879;
+    border-radius: 50%;
+    background: #7cd7db;
+}
+#summary-stats {
+    display: flex;
+    gap: 3rem;
+    width: 60%;
+    margin: 2rem auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #395879;
+  }
+  #summary-stats p {
+    font-family: 'Roboto Condensed';
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  #summary-stats .number {
+    font-size: 2rem;
+    background: linear-gradient(152deg, rgba(232, 27, 77, 1) 22%, rgba(62, 0, 255, 1) 59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #summary-stats p i {
+    background: linear-gradient(152deg, rgba(232, 27, 77, 1) 22%, rgba(62, 0, 255, 1) 59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+}
+#quiz-results .start-button {
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+    width: 30%;
+    background: rgb(79,70,252);
+    background: linear-gradient(152deg, rgba(79,70,252,1) 0%, rgba(204,61,25,1) 100%);
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+  

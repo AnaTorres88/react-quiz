@@ -12,6 +12,10 @@
 }
 
 #quiz-start .start-button {
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
     margin: 0 auto;
     padding: 0;
     background: rgb(63,94,251);
@@ -21,7 +25,6 @@
     border: none;
     width: 40%;
     height:60px;
-    font-size: 30px;
     font-weight: 600;
     transition: all 0.2s linear;
     border-bottom:5px solid #2034a6;
@@ -38,7 +41,12 @@
 }
 
 #quiz-start h1 {
-    color: #b3005f;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(152deg, rgba(232, 27, 77, 1) 22%, rgba(62, 0, 255, 1) 59%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 1px 1px 2px rgba(63, 64, 71, 0.5);
 }
 #quiz-start .instructions {
