@@ -14,6 +14,8 @@ export default function Results({buttonText = "Restart", calcType = "round", app
 
   const points = 100 / results.answersList.length;
   let right=0;
+  let rightSummary=[];
+  let wrongSummary = [];
   const compareAnswersGetPoints = () => {
     let totalPoints = 0;
     let checkboxPoints;
@@ -24,7 +26,11 @@ export default function Results({buttonText = "Restart", calcType = "round", app
         if (item.answer[0].toLowerCase() === questions[index].answer.toString().toLowerCase()) {
             totalPoints += points;
             right++;
+            rightSummary.push(questions[index]);
+        } else {
+            wrongSummary.push(questions[index]);
         }
+        
     });
 
     return Math[calcType](totalPoints + checkboxPoints);
@@ -45,6 +51,7 @@ export default function Results({buttonText = "Restart", calcType = "round", app
         right++;
         return rightCounter === sortedAnswers.length ? points : 0;
     };
+
     const total = compareAnswersGetPoints();
 
     return (
@@ -59,19 +66,27 @@ export default function Results({buttonText = "Restart", calcType = "round", app
                  <h2>{`Haz Obtenido:  ${total} puntos`}</h2>
                  {total >= approved  ? "¡¡HAZ APROBADO, FELICIDADES!!" : "ÁNIMO, INTÉNTALO DE NUEVO" }
 
-                 <div id="summary-stats">
-                        <p>
-                        <i className="bi bi-emoji-sunglasses"></i>
-                        <span className="number">{right}</span>
-                        <span className="text">Aciertos</span>
-                        </p>
-                        <p>
-                        <i className="bi bi-emoji-dizzy"></i>
-                        <span className="number">{questions.length-right}</span>
-                        <span className="text">Errores</span>
-                        </p>
-                 </div>
-
+                <div id="summary-stats">
+                    <p>
+                    <i className="bi bi-emoji-sunglasses"></i>
+                    <span className="number">{right}</span>
+                    <span className="text">Aciertos</span>
+                    </p>
+                    <p>
+                    <i className="bi bi-emoji-dizzy"></i>
+                    <span className="number">{questions.length-right}</span>
+                    <span className="text">Errores</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h3>Right Answers</h3>
+                    {rightSummary.map(item => <div key={item.text}>{item.text}<br/>{item.answer}</div>)}
+                </div>
+                <div>
+                    <h3>Wrong Answers</h3>
+                    {wrongSummary.map(item => <div key={item.text}>{item.text}<br/>{item.answer}</div>)}
+                </div>
                 {instructions && <Text className="paragraph" text={instructions}/>}
                 {imgUrl && <img className="quiz-image" src={imgUrl}/>}
             </div>
