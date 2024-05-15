@@ -21,26 +21,27 @@ export default function Results({buttonText = "Restart", calcType = "round", app
     let checkboxPoints;
     resultsData.answersList.forEach((item, index )=> {
         if (questions[index].type === "checkbox") {
-            checkboxPoints = checkCheckboxAnswers(item.answer, questions[index].answer);
-        }
-        if (item.answer[0].toLowerCase() === questions[index].answer.toString().toLowerCase()) {
-            totalPoints += points;
-            right++;
-            rightSummary.push(questions[index]);
+            checkboxPoints = checkCheckboxAnswers(questions[index], item.answer, questions[index].answer);
         } else {
-            wrongSummary.push(questions[index]);
+            if (item.answer[0].toLowerCase() === questions[index].answer.toString().toLowerCase()) {
+                totalPoints += points;
+                right++;
+                rightSummary.push(questions[index]);
+            } else {
+                wrongSummary.push(questions[index]);
+            }
         }
-        
     });
 
     return Math[calcType](totalPoints + checkboxPoints);
   };
 
-  const checkCheckboxAnswers = (answers, userAnswers) => {
+  const checkCheckboxAnswers = (question, answers, userAnswers) => {
         let rightCounter=0;
         const sortedAnswers = answers.sort();
         const sortedUserAnswers = userAnswers.sort();
         if(answers.length !== userAnswers.length) {
+            wrongSummary.push(question);
             return 0;
         }
         sortedAnswers.forEach((answer, i) => {
@@ -48,10 +49,19 @@ export default function Results({buttonText = "Restart", calcType = "round", app
                 rightCounter++;
             }
         });
+        rightSummary.push(question);
         right++;
+        
         return rightCounter === sortedAnswers.length ? points : 0;
     };
 
+    function formatArrayAnswer(answer) {
+        if(!Array.isArray(answer)) {
+           return answer;
+        } else {
+            return answer.join(', ');
+        }
+    }
     const total = compareAnswersGetPoints();
 
     return (
@@ -80,12 +90,12 @@ export default function Results({buttonText = "Restart", calcType = "round", app
                 </div>
                 
                 <div>
-                    <h3>Right Answers</h3>
-                    {rightSummary.map(item => <div key={item.text}>{item.text}<br/>{item.answer}</div>)}
+                    <h3>Respuestas Correctas</h3>
+                    {rightSummary.map(item => <div key={item.text}>{item.text}<br/>{formatArrayAnswer(item.answer)}</div>)}
                 </div>
                 <div>
-                    <h3>Wrong Answers</h3>
-                    {wrongSummary.map(item => <div key={item.text}>{item.text}<br/>{item.answer}</div>)}
+                    <h3>Respuestas Incorrectas</h3>
+                    {wrongSummary.map(item => <div key={item.text}>{item.text}<br/>{formatArrayAnswer(item.answer)}</div>)}
                 </div>
                 {instructions && <Text className="paragraph" text={instructions}/>}
                 {imgUrl && <img className="quiz-image" src={imgUrl}/>}
