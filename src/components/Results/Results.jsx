@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import Text from "../Text/Text";
 import results  from "../../data/results.json";
 import { useState, useContext } from 'react'
-import { QuizContext } from '../../App';
+import { QuizContext } from '../../QuizRenderer';
 export default function Results({buttonText = "Restart", calcType = "round", approved = 70 ,instructions="", imgUrl="", onReset}){
     const [resultsData, setResultsData] = useState(results);
     const [questions] = useContext(QuizContext);

@@ -2,7 +2,7 @@ import "./Footer.css";
 import Pagination from "../Pagination/Pagination";
 import Button from "../Button/Button";
 import {useContext, useState} from 'react';
-import { QuizContext } from '../../App';
+import { QuizContext } from '../../QuizRenderer';
 
 export default function Footer({changePageCount, pageCount, start, finish}) {
     const [questions] = useContext(QuizContext);

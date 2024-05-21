@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import { QuizContext } from '../App';
+import { QuizContext } from '../QuizRenderer';
 
 import Text from "./Text/Text"
 import "./Question.css";

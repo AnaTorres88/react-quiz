@@ -1,5 +1,5 @@
 import {useState, useContext} from 'react';
-import { QuizContext } from '../../App';
+import { QuizContext } from '../../QuizRenderer';
 import { updateAnswers, updateCheckboxAnswer}  from '../../helpers/updateAnswers';
 
 

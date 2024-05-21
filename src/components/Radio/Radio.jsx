@@ -1,5 +1,5 @@
 import {useContext, useState} from 'react';
-import { QuizContext } from '../../App';
+import { QuizContext } from '../../QuizRenderer';
 import { updateAnswers}  from '../../helpers/updateAnswers';
 export default function Radio({label, checked, name, id, updateAnswer, index, ...props}) {
       const [answer, setAnswer] = useState(null);

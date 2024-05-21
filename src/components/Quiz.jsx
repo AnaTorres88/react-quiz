@@ -4,7 +4,7 @@ import "./Quiz.css";
 import Text from "./Text/Text";
 import Footer from "./Footer/Footer";
 import {useContext, useState} from 'react';
-import { QuizContext } from '../App';
+import { QuizContext } from '../QuizRenderer';
 
 /* Takes care of pagination */
 export default function Quiz({title, updateAnswer, start, finish}) {

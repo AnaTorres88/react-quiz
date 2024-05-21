@@ -1,0 +1,40 @@
+#error404 {
+    display:block;
+    padding: 15px;
+    height: 90vh;
+    display: flex;
+    background: rgb(168,15,44);
+    border: 1px solid #fff;
+    background: radial-gradient(circle, rgba(168,15,44,1) 22%, rgba(187,78,95,1) 59%);
+    -webkit-box-shadow: 0 20px 60px -23px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 20px 60px -23px rgba(0, 0, 0, 0.45);
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+}
+
+#error404 .text {
+    width: 60%;
+    align-self: center;
+
+}
+#error404 aside {
+    width: 40%;
+    align-self: center;
+}
+#error404 h1 {
+    font-family: "Roboto Condensed", Arial, helvetica, sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 8rem;
+}
+#error404 p {
+    font-style: italic;
+    color: #fff;
+    font-size: 4rem;
+}
+#error404 i {
+    width: 40%;
+    font-size: 20rem;
+    color: #ebeae3;
+}
