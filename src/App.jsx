@@ -7,7 +7,7 @@ import {
 import RootLayout from './RootLayout';
 import Error from './Error';
 import QuizRenderer from "./QuizRenderer";
-import Login from "./auth/login";
+import Login from "./auth/Login";
 
 // Version intuitiva
 const router = createBrowserRouter([

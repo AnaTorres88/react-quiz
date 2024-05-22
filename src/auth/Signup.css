@@ -1,0 +1,65 @@
+#signup-form {
+    width: 90%;
+    max-width: 40rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: linear-gradient(180deg, #d5e0e0, #bea2e6);
+    border-radius: 8px;
+    box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.5);
+}
+
+#signup-form h1 {
+    font-family: "Roboto condensed", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: rgb(45,41,120);
+    text-shadow: 0 1px 0;
+    text-align: left;
+}
+#signup-form h2, #signup-form h3 {
+    font-family: "Roboto condensed", Arial, Helvetica, sans-serif;
+    color: rgb(45,41,120);
+    text-align: left;
+}
+#signup-form p {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.alert {
+    color: rgba(159, 21, 51, 0.9);;
+}
+.input-wrapper {
+    margin-bottom: 1rem;
+}
+.input-container {
+    width: 50%;
+    margin: 0 0 1rem 0;
+}
+.input-container label {
+    text-align: left;
+    font-size: 1.2rem;
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    color: #1c8780;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#user-info {
+    margin-top: 2rem;
+}
+.form-controls {
+    margin-top: 2rem;
+}
+.reset {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+}
+.submit {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    background: rgb(79,70,252);
+    background: linear-gradient(152deg, rgba(79,70,252,1) 0%, rgba(204,61,25,1) 100%);
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-left: 1rem;
+}
