@@ -8,7 +8,7 @@ import RootLayout from './RootLayout';
 import Error from './Error';
 import QuizRenderer from "./QuizRenderer";
 import Login from "./auth/Login";
-
+import Signup from "./auth/Signup";
 // Version intuitiva
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <Error />,
     children: [
-      { index: true, element: <Login /> }, // path: ""
+      { index: true, element: <Signup /> }, // path: ""
       { path: "/quiz", element: <QuizRenderer /> },
     ],
   },
