@@ -1,6 +1,5 @@
 
 
-import input from "./components/Forminput";
 import { useState } from "react";
 import { isNotEmpty } from '../util/validation.js';
 import "./Signup.css";
