@@ -24,6 +24,11 @@
     text-align: left;
     margin-bottom: 1rem;
 }
+#signup-form .alert {
+    color: #9d0f0f;
+    font-size: 0.8rem;
+    padding: 0;
+}
 .alert {
     color: rgba(159, 21, 51, 0.9);;
 }

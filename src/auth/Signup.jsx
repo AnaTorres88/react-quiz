@@ -1,15 +1,20 @@
 
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { doCreateUserWithEmailAndPassword } from '../firebase/auth';
 import { isNotEmpty } from '../util/validation.js';
 import "./Signup.css";
 
 export default function Signup() {
+    const navigate = useNavigate();
     const [passwordsAreNotEqual, setPasswordsAreNotEqual] = useState(false);
+    const [passwordWeak, setPasswordWeak] = useState(false);
     const [firstNameEmpty, setFirstNameEmpty] = useState(false);
     const [LastNameEmpty, setLastNameEmpty] = useState(false);
+    const [isRegistering, setIsRegistering] = useState(false);
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         const fd = new FormData(event.target);
         const data = Object.fromEntries(fd.entries());
@@ -18,6 +23,9 @@ export default function Signup() {
         const enteredLastName = fd.get("last-name");
         if(enteredEmail.trim().length === 0) {
             return;
+        }
+        if(!(data.password, 6)){
+            setPasswordWeak(true);
         }
         if(data.password.trim() !== data['confirm-password'].trim()) {
             setPasswordsAreNotEqual(true);
@@ -30,11 +38,22 @@ export default function Signup() {
         if(!isNotEmpty(enteredLastName)) {
             setLastNameEmpty(true);
             return;
+            
         }
-        //event.target.reset();
+        if(!isRegistering) {
+            setIsRegistering(true);
+            await doCreateUserWithEmailAndPassword(data.email, data.password)
+            .then(()=> {
+                navigate("/");
+            })
+            .catch((error) => {
+                console.warn(error, "No fue posible crear el usuario. Intenta de nuevo");
+            });
+        }
+        event.target.reset();
     }
     return (
-      <main id="signup-form">
+      <main id="signup-form" >
         <h1>Sign Up! </h1>
         <form onSubmit={handleSubmit} onReset={()=>{}}>
             <h2>Bienvenido/a</h2>
@@ -46,13 +65,14 @@ export default function Signup() {
             </div>
             <div className="form-group input-container pass">
                 {passwordsAreNotEqual && <p className="alert">Las contraseñas no coinciden</p>}
+                {passwordWeak && <p className="alert">La contraseña debe tener al menos 6 caracteres.</p>}
                 <div className="input-wrapper">
                     <label htmlFor="password">Contraseña</label>
                     <input className="form-control" id="password" type="password" name="password" required/>
                 </div>
                 <div className="input-wrapper">
                     <label htmlFor="confirm-password">Confirmar Contraseña</label>
-                    <input className="form-control" id="confirm-password" type="confirm-password" name="confirm-password" required/>
+                    <input className="form-control" id="confirm-password" type="password" name="confirm-password" required/>
                 </div>
             </div>
 

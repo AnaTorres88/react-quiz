@@ -1,4 +1,6 @@
 import { useState, createContext } from 'react'
+import { Navigate } from "react-router-dom";
+import { useAuth } from './auth/authContext';
 import Quiz from './components/Quiz';
 import Start from './components/Start';
 import Results from './components/Results/Results';
@@ -11,7 +13,7 @@ export const QuizContext = createContext(questionList);
 // ROUTER
 
 function QuizRenderer() {
-  
+  const {userLoggedIn} = useAuth();
   const [ questions, setQuestions ] = useState(questionList);
   const [start, setStart ] = useState(false);
   const [results, setResults ] = useState(false);
@@ -57,7 +59,7 @@ function QuizRenderer() {
   return (
     <QuizContext.Provider value={[questions, setQuestions]}>
       <>
-        {renderQuiz()}
+        {userLoggedIn ? renderQuiz() : <Navigate to="/" replace/> }
       </>
     </QuizContext.Provider>
   )

@@ -4,6 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { AuthProvider } from "./auth/authContext";
 import RootLayout from './RootLayout';
 import Error from './Error';
 import QuizRenderer from "./QuizRenderer";
@@ -16,14 +17,19 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <Error />,
     children: [
-      { index: true, element: <Signup /> }, // path: ""
+      { index: true, path: "/", element: <Login /> }, // path: ""
+      { path: "/signup", element: <Signup/>},
       { path: "/quiz", element: <QuizRenderer /> },
     ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+  <AuthProvider>
+    <RouterProvider router={router} />;
+  </AuthProvider>
+  )
 }
 
 export default App;

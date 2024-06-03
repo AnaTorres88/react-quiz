@@ -1,9 +1,17 @@
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+
 import { isEmail, isNotEmpty, hasMinLength } from '../util/validation.js';
+import { doSignInWithEmailAndPassword } from '../firebase/auth';
+import { useAuth } from '../auth/authContext';
 import Input from "./components/FormInput";
 import { useInput } from "../hooks/useInput";
 import "./Login.css";
 
+
 export default function Login() {
+  const {userLoggedIn} = useAuth();
+  const [isSigningIn, setIsSigningIn] = useState(false);
   const {
     value: emailValue,
     handleInputChange: handleEmailChange,
@@ -17,16 +25,31 @@ export default function Login() {
     hasError: passwordHasError,
   } = useInput('', (value) => hasMinLength(value, 6));
 
-  function handleSubmit(event) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (userLoggedIn){
+       return navigate("/quiz");
+    }
+ },[userLoggedIn]);
+
+  // submit
+  async function handleSubmit(event) {
     event.preventDefault();
     if (emailHasError || passwordHasError) {
       return;
+    }
+
+    if(!isSigningIn) {
+      setIsSigningIn(true);
+      await doSignInWithEmailAndPassword(emailValue, passwordValue);
     }
   }
 
   return (
     <main id="login">
       <h1>Quiz App login</h1>
+      <p>¿Sin cuenta aún? <Link to="/Signup">Crea una ahora</Link></p>
       <form onSubmit={handleSubmit}>
         <div className="form-group input-container">
           <label htmlFor="email">Email</label>
